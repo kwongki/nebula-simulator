@@ -1,5 +1,6 @@
 package com.vantiq.simulatornebula;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -10,6 +11,9 @@ import org.springframework.web.socket.server.standard.ServletServerContainerFact
 @Configuration
 @EnableWebSocket
 public class NebulaWebSocketConfiguration implements WebSocketConfigurer {
+    @Autowired
+    NebulaWebSocketHandler nebWSHandler;
+
     @Bean
     public ServletServerContainerFactoryBean createWebSocketContainer() {
         ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
@@ -19,6 +23,6 @@ public class NebulaWebSocketConfiguration implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new NebulaWebSocketHandler(), "/socket").setAllowedOrigins("*");
+        registry.addHandler(nebWSHandler, "/ws").setAllowedOrigins("*");
     }
 }

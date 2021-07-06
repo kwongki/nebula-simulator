@@ -1,6 +1,7 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.5.RELEASE'
+		//springBootVersion = '2.0.5.RELEASE'
+		springBootVersion = '2.5.2'
 	}
 	repositories {
 		mavenCentral()
@@ -27,7 +28,7 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-websocket')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	compile 'com.googlecode.json-simple:json-simple:1.1.1'
-	compile "org.json:json:20210307"
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+	implementation "org.json:json:20210307"
 
 }
