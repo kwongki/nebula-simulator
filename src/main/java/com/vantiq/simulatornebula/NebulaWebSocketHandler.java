@@ -173,15 +173,16 @@ public class NebulaWebSocketHandler extends AbstractWebSocketHandler {
       try {
         int batchCount = 0;
         int i = 0;
-        for (i = 0; i<results.length() && isRunning() && i<this._maxsize; i++) {
+        for (i = 0; i<results.length() && isRunning() && (this._maxsize > -1 ? i<this._maxsize : true); i++) {
           JSONObject curObj = results.getJSONObject(i);
-          TextMessage reply = new TextMessage(curObj.toString());
+          TextMessage reply = new TextMessage(curObj.getJSONObject("data").toString());
           this._session.sendMessage(reply);
           batchCount++;
           if (batchCount == this._batchsize) {
             Thread.sleep(this._waitsecs * 1000);
             batchCount = 0;
           }
+          System.out.println("sent msg #"+i);
         }
         System.out.println(".... Done replaying events (sent #"+ i +")....");
 
