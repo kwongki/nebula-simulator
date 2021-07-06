@@ -21,6 +21,9 @@ This websocket endpoint will accept two types of messages with the following pay
 
 ## Getting Started ##
 
+Download the input file containing the JSON Array from here:
+https://drive.google.com/file/d/1bwIphEVOPg0xVnek6zwZimI5-6NA3QHB/view?usp=sharing
+
 To run the project:
 
 `./gradlew bootRun --args='--input.file="/fullpath/to/recombinedMsg.json" --output.batchSize=4 --output.wait=2 --output.maxSize=20'`
@@ -29,7 +32,7 @@ where:
 * `input.file`: contains the full path to the input JSON Array file for replaying events
 * `output.batchsize`: # of records to send in a batch
 * `output.wait`: # of seconds to wait between batch
-* `output.maxSize`: max # of total records to send
+* `output.maxSize`: max # of total records to send (if value is -1 then no limits)
 
 
 ## Connecting to Mock Server ##
