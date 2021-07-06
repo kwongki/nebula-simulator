@@ -33,13 +33,10 @@ public class GeneralController {
 
 	public JSONObject login() {
 		JSONObject data = new JSONObject();
-		JSONObject user = new JSONObject();
 
-		user.put("key", "15066077926396217608");
-
-		data.put("code", 200);
-    data.put("data", user);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", "15066077926396217608");
+		data.put("msg", "");
 
 		return data;
 	}
@@ -51,9 +48,9 @@ public class GeneralController {
 
 		user.put("key", "1591148010_1");
 
-		data.put("code", 200);
-    data.put("data", user);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", user);
+		data.put("msg", "");
 
 		return data;
 	}
@@ -82,9 +79,9 @@ public class GeneralController {
 		images.add(image1);
 		images.add(image2);
 
-		data.put("code", 200);
-    data.put("data", images);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", images);
+		data.put("msg", "");
 
 		return data;
 	}
@@ -96,9 +93,9 @@ public class GeneralController {
 
 		image.put("img_id", "150661622565837_3077926396217608");
 
-		data.put("code", 200);
-    data.put("data", image);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", image);
+		data.put("msg", "");
 		return data;
 	}
 
@@ -107,14 +104,14 @@ public class GeneralController {
 		JSONObject data = new JSONObject();
 		JSONObject device = new JSONObject();
 
-		device.put("device_id", "xxXXxx");
+		device.put("device_id", "ID");
 		device.put("serial_id", "NMASX08MVXHC30094");
 		device.put("version", "SenseNebula-AIE-V2.1.3-20210415");
 		device.put("web_version", "SenseNebula-AIE-Web-V2.1.3-20210415");
 
-		data.put("code", 200);
-    data.put("data", device);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", device);
+		data.put("msg", "");
 
 		return data;
 	}
@@ -124,11 +121,11 @@ public class GeneralController {
 		JSONObject data = new JSONObject();
 		JSONObject device = new JSONObject();
 
-		device.put("device_id", "xxXXxx");
+		device.put("device_id", "ID");
 
-		data.put("code", 200);
-    data.put("data", device);
-		data.put("msg", "Lorem Ipsum");
+		data.put("code", 0);
+    	data.put("data", device);
+		data.put("msg", "");
 
 		return data;
 	}
